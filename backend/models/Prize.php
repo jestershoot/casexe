@@ -48,4 +48,15 @@ class Prize extends ActiveRecord
             return $types;
         }
     }
+
+    public static function prizeName($id) {
+        $prize = Prize::find()->where(['=', 'id', $id])->one();
+
+        return $prize->name;
+    }
+
+    // reduce number of prizes
+    public static function acceptPrize($prize) {
+        Prize::updateAll(['cnt' => $prize->cnt -1], 'id =' .$prize->id);
+    }
 }

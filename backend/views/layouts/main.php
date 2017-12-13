@@ -41,6 +41,11 @@ AppAsset::register($this);
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+
+        $menuItems[] = ['label' => 'Manage prizes', 'url' => ['/prize/']];
+        $menuItems[] = ['label' => 'Payments', 'url' => ['/card/']];
+        $menuItems[] = ['label' => 'Send requests', 'url' => ['/address/']];
+
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
