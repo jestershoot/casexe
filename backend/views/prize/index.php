@@ -30,5 +30,5 @@ use backend\models\Prize;
     </table>
 
 <?php else : ?>
-    <p>Призы не определены. <a href="/admin/prize/manage/">Add new prize</a></p>
+    <p>List is empty. <a href="/admin/prize/manage/">Add new prize</a></p>
 <?php endif; ?>

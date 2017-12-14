@@ -15,12 +15,21 @@ use yii\web\Controller;
 class PrizeController extends Controller
 {
     public function actionIndex() {
-        $prizes = Prize::find()->all();
+        if (Yii::$app->user->isGuest) {
+            Yii::$app->session->setFlash('error', 'Access denied.');
+            return $this->redirect('/admin/site/login');
+        }
 
+        $prizes = Prize::find()->all();
         return $this->render('index', compact('prizes'));
     }
 
     public function actionManage($id = 0) {
+        if (Yii::$app->user->isGuest) {
+            Yii::$app->session->setFlash('error', 'Access denied.');
+            return $this->redirect('/admin/site/login');
+        }
+
         if ($id) {
             $model = Prize::find()->where(['id' => $id])->one();
         }
@@ -45,6 +54,11 @@ class PrizeController extends Controller
     }
 
     public function actionDelete($id) {
+        if (Yii::$app->user->isGuest) {
+            Yii::$app->session->setFlash('error', 'Access denied.');
+            return $this->redirect('/admin/site/login');
+        }
+
         $message = '';
         if (is_numeric($id)) {
             $model = Prize::find()->where(['id' => $id])->one();

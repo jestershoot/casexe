@@ -15,11 +15,21 @@ use frontend\models\Address;
 class AddressController extends Controller
 {
     public function actionIndex() {
+        if (Yii::$app->user->isGuest) {
+            Yii::$app->session->setFlash('error', 'Access denied.');
+            return $this->redirect('/admin/site/login');
+        }
+
         $addresses = Address::find()->orderBy(['id' => SORT_DESC])->all();
         return $this->render('addresses', ['addresses' => $addresses]);
     }
 
     public function actionSend($id) {
+        if (Yii::$app->user->isGuest) {
+            Yii::$app->session->setFlash('error', 'Access denied.');
+            return $this->redirect('/admin/site/login');
+        }
+
         Address::prizeSent($id);
         Yii::$app->session->setFlash('success', 'Prize was sent successfully.');
         return $this->redirect('/admin/address/');
