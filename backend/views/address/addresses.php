@@ -9,15 +9,15 @@ use backend\models\Prize;
     <table class="table table-bordered table-hover">
         <thead>
         <tr>
-            <td>Prize</td>
-            <td>Reciever Name</td>
-            <td>Zip</td>
-            <td>Country</td>
-            <td>State</td>
-            <td>City</td>
-            <td>Address</td>
-            <td>Status</td>
-            <td>Operations</td>
+            <th>Prize</th>
+            <th>Reciever Name</th>
+            <th>Zip</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th>Operations</th>
         </tr>
         </thead>
         <tbody>

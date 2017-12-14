@@ -7,11 +7,11 @@ use frontend\models\Card;
 <?php if (sizeof($payments)) : ?>
     <table class="table table-bordered table-hover">
         <thead>
-        <tr><td>Card Type</td>
-            <td>Card Number</td>
-            <td>Amount</td>
-            <td>status</td>
-            <td>Operations</td>
+        <tr><th>Card Type</th>
+            <th>Card Number</th>
+            <th>Amount</th>
+            <th>status</th>
+            <th>Operations</th>
         </tr>
         </thead>
         <tbody>

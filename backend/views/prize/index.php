@@ -8,11 +8,11 @@ use backend\models\Prize;
     <p><a href="/admin/prize/manage/">Add new prize</a></p>
     <table class="table table-bordered table-hover">
         <thead>
-        <tr><td>Prize Name</td>
-            <td>Type</td>
-            <td>Amount</td>
-            <td>Prizes available</td>
-            <td colspan="2">Operations</td>
+        <tr><th>Prize Name</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Prizes available</th>
+            <th colspan="2">Operations</th>
         </tr>
         </thead>
         <tbody>
